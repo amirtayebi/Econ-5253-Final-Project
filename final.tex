@@ -1,0 +1,297 @@
+\documentclass[12pt,english]{article}
+\usepackage{mathptmx}
+
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{0.,0.,139.}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{lipsum}
+
+
+
+
+\usepackage[authoryear]{natbib}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{pdflscape}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},backref=false,
+ colorlinks,citecolor=black,filecolor=black,
+ linkcolor=black,urlcolor=black]
+ {hyperref}
+\usepackage[all]{hypcap} % Links point to top of image, builds on hyperref
+\usepackage{breakurl}    % Allows urls to wrap, including hyperref
+
+\linespread{2}
+
+\begin{document}
+
+\begin{singlespace}
+\title{The effects of electoral restrictions on the quality of politicians: The case of the U.S\thanks{I would like to thank Dr.Ransom for his help.}}
+\end{singlespace}
+
+\author{Amir Tayebi\thanks{Department of Economics, University of Oklahoma.\
+E-mail~address:~\href{mailto:amir.tayebi-1@ou.edu}{amir.tayebi-1@ou.edu}}}
+
+% \date{\today}
+\date{May 9, 2019}
+
+\maketitle
+
+\begin{abstract}
+\begin{singlespace}
+There are a wide range of restrictions being imposed to politicians in the U.S. that can change the pool of candidates running for office. One of theses limitations is the Dual-employment Law preventing public employees in certain states to hold a paid public job and and an elected positions concurrently. In this paper, I investigate the effects of this law on the quality of politicians. According to the results, candidates in states where the Dual-employment Law is in effect are less educated, and they tend to have more Law degrees. Also, I show that there are more Democratic candidates where this law is in effect.
+\end{singlespace}
+
+\end{abstract}
+\vfill{}
+
+
+\pagebreak{}
+
+
+\section{Introduction}\label{sec:intro}
+
+Politicians are supposed to choose and implement policies. Therefore, the quality of politicians affects what type of policies are selected, how they are carried out, and who is targeted. While in autocracies public servants have no barriers to stay in office for a long time, rulers in democracies are constrained by law and they need to meet certain criteria to become eligible for office. Voters in democracies are affected by decisions made by politicians, and so they need to elect high-qualified ones. Voters also have a wide range of interests and they would like to have all their interests satisfied by policy makers. As a result, there should be a broad representation to meet every one’s interests.
+
+It is ideal to have both quality rulers and broad representation. However, according to most researches, there is a trade-off between quality and representation. There are several incompetent politicians being elected by people all around the world. From the economics perspective, people face opportunity costs of entering politics, and there is an inverse relationship between opportunity cost and quality of rulers. There is a lower level of opportunity cost for less competent people to enter public life, and as opportunity costs increase, broad presentation might be affected.
+
+People in the United States face a large number of federal, state, and local restrictions to enter public life. Resign to Run law, Dual-Office employment law, term limits, and age of candidacy are some of important barriers against people to become politicians. In this paper, I investigate the effect of those limitations on the quality of politicians.
+
+
+
+\section{Literature Review}\label{sec:litreview}
+
+This paper contributes to the literature on economics model of political selection examining how political institutions affect the voter behavior and politicians’ characteristics. To the best of my knowledge, this is also the first paper to examine the effects of the Dual-employment and Resign-to-run laws that are in effect in the U.S.
+
+There is an extensive theoretical and empirical literature studying the effects of limitations on the quality of politicians. While previous studies tended to be more theoretical, most recent papers have focused on empirical works. Regarding the theoretical papers, the citizen-candidate approach of \citet{10.2307/2951277} and \citet{10.2307/2946658} were among the most influential ones. They identify political race as a three-stage game of entry, voting and policy making. Their model tries to characterize who enters, and who succeeds.
+
+Empirical studies have focused on several aspects of restrictions including but not limited to gender quotas, roles of institutions, and professional background of politicians.
+Regarding the gender quotas, \cite{doi:10.1111/j.1468-0262.2004.00539.x}  examine the 
+how individual and village characteristics impact the behavior politicians while they are in office. They find that as education increases the chance of politicians to be elected increases, but land ownership has no effect on politician opportunism. \cite{BRAGA20171} investigate how the performance of politicians is affected by gender quotas. Using a sample of Italian politicians, they find that government eﬃciency increases if there are more female politicians in office. 
+
+The quality of politicians could also be affected by characteristics of institutions. The majority of papers on the role of institutions have employed cross-national samples to study how political systems alter the quality of politicians. In one of the most recent studies, Besley and Reynal-Querol (2011) employ a cross-country sample to examine the political freedom on the characteristics of politicians. According to their study, Better educated politicians are observed more frequently as leaders in democracies than in autocracies.
+
+One of the most important effects of restrictions on political selection can be stated as a crowding-out effect. Some researches have found some evidence that restrictions can cause certain people from certain backgrounds to drop out of political competitions.  \cite{10.2307/27821948} find the are more businessmen as governors in Russian provinces and republics where there is low media freedom and government transparency. \cite{doi:10.1177/106591290605900411}  shows disclosure rules are associated with a lower presence of businessmen and lawyers in U.S. state legislatures.
+
+The last pieces of empirical papers have emphasized on laws by which public servants are affected. \cite{BRAENDLE2016696} study the effects of two laws that impact public employees in the U.K and show there are seven percentage points fewer public servants in parliaments where a more strict institutions is in force. Their results show there is a higher level of opportunity costs for public servants. 
+
+\section{Data}\label{sec:data}
+This paper employs individual-level data to investigate the relationship between limitations and quality of politicians.
+I incorporate several data sets to create the data set of interest. The first piece of data comes from the VoteSmart project's website. They have detailed individual-level data on almost all current state senators and representatives, and some former ones. Since they did not provide any ready-to-use data, I scrapped their website to extract the data using R. Although they provide the most detailed biographical information on candidates and politicians, they don't have any data on race. Race is an important factor that can affect voter behaviour. Also, some important characteristics of a wide range of politicians are missing. despite of the weaknesses of this data-set, it is the most comprehensive and detailed data-set among others. 
+The second piece of data comes from the FollowTheMoney's website. They have recorded the amount of money each candidate has risen and has spent by election cycle. They have also collected the detailed data on the sources politicians have received  money from.
+
+Since I need to control for state and county demographics, I also employ the US census data to incorporate to the data on politicians' characteristics. The last part of date comes the Book of States provided by The Council of State Governments. It Includes 150 in-depth tables, charts, and figures comparing all 56 states, commonwealths, and territories of the US on all branches of state government, policies, administration, elections, finance, and federal-state relations.
+
+Table \ref{tab:descriptives} contains summary statistics. Date on gender is available for two third of the sample, and according to the table, around 77 percent of the pool of candidates and politicians are men and the rest are women. One of the important variables that could affect voter behavior is candidates' religions. While Christians comprise around 80 percent of the sample, all other religions  construct only 20 percent of it. It should be mentioned that data availability on religion is quite low compared to the other variables.  
+
+The main variable of interest in this study is candidate's education. I measure the quality of politicians by their level of education as a categorical variable. Data on education is available for around half of the observations. While people with Bachelor's degrees constitute 40 percent of the sample, only four percent of the sample have either Ph.D or medical degrees. Interestingly, there are a huge number of candidates with Law degrees constructing around fourteen percent of the sample.
+
+We can also measure the level of education by the years of schooling as a continuous variable. According to table, the mean years of schooling is a little bit more than 16 years.
+
+In this paper, I only consider the effect of the Dual-employment Law on the quality of politicians that refers to holding a paid position with the state in addition to an elected office. The practice may also be referred to as double dipping.
+
+Figure \ref{tab:Law} shows states in which the Dual-employment Law is in effect. These states are: Alabama, Alaska, Arizona, California, Georgia, Kentucky, Maryland, Louisiana, Massachusetts, Michigan, Missouri, Ohio, New Jersey, and West Virginia. They are colored by blue.
+
+
+
+\section{Empirical Methods}\label{sec:methods}
+I still need to review the literature to specify my model, but for the sake of this course, I  employ the OLS and Probit regression models to investigate the effects of the Dual-employment Law on the quality of politicians. The model can be stated using the following equation:
+
+
+$Quality_i_j_t = \alpha + \beta_1 Gender_i + \beta_2 Party_i + \beta_3 Religion_i + \beta_4 Funding_i + \beta_5 Limitation_i_j_t + \beta_6 C_j_t + Year_t + State_j + \epsilon_i_j_t $
+
+
+
+The dependent variable is an index to measure the quality of individual i in state j during year t, and  $Gender_i$ ,  $Party_i$ ,$Religion_i$ ,  $Funding_i$  are gender, associated party, religion, and funding of individual i, respectively. $C_j_t$ is vector of state demographic variables including population, latitude, longitude, median income level, race, etc.
+
+As it was mentioned above, I employ two regression models. If the outcome variable is a continuous variable, I make use of a simple OLS model, and if the outcome variable is a categorical variable, I estimate the equation using a logistic regression model. Therefore, The OLS approach is used to estimate the equation if quality of politicians is measured a their educational level, and the logistic regression model is employed if the educational level is measured as the years of schooling.
+
+
+
+
+\section{Research Findings}\label{sec:results}
+Unfortunately, there is no variation in the data in terms of the types of restrictions being imposed to politicians, and therefore, the results of the estimations cannot be interpreted as causal. Also my data set only comprises the politicians, and to get more accurate results I need to collect the census data and incorporate them to my data set. Therefore, the results of the estimations only show the simple correlations between variables. 
+
+
+The main results are reported in Table \ref{tab:estimates}. The first column shows the results of the logistic regression where the dependent variable is a binary variable equal to 1 if the level of  education of a candidate is Ph.D and zero otherwise. Given the results of the regression, the Dual-employment Law has no significant effect on the quantity of candidates with Ph.D degrees although the coefficient of estimate is negative. The coefficient of estimate on party is positive and statistically significant meaning that there are more candidates form the Democratic party in states in which the Dual-employment Law is in effect.
+
+The second column represents the results of the OLS regression where the dependent variable is the age of politicians. According to the results, the Dual-employment Law has a positive and significant effect on the age of politicians meaning that on average the age politicians increases if the Dual-employment Law is in effect. This result is unexpected since older people do not tend to quit their job in order to enter the politics which in turn, increases the chance of the young people to get elected for office.
+
+The third column shows the results of the estimation where the dependent variable is the years of schooling. The coefficient of estimate on the Dual-employment Law is negative and  statistically significant. Therefore, the mean years of schooling of politicians in states in which the Dual-employment Law is in effect decreases by around three years. Since more educated people are working in public offices in the U.S, they are not willing to resign from their jobs in order to run for office. This also can be attributed to the higher level of opportunity costs that   pubic employees are facing with. 
+
+The last column presents the results of the logistic regression where the dependent variable has a value of 1 if the candidate's degree is in Law related fields and zero otherwise. According to the table, more people with Law related fields are willing to run for office in states in which the Dual-employment Law is in effect. Most people with Law degrees are not public employees and therefore, they do not face a high level of opportunity cost to enter politics. 
+
+While the coefficient of estimate on party in all the four columns is positive and statistically significant, the gender's coefficient follows a diffident pattern and it makes it hard to interpret the results. 
+
+
+
+
+\section{Conclusion}\label{sec:conclusion}
+
+
+While in autocracies public servants have no barriers to stay in office for a long time, rulers in democracies are constrained by law and they need to meet certain criteria to become eligible for office.
+People in the United States face a large number of federal, state, and local restrictions to enter public life. In this paper, I investigate the effect of those limitations on the
+quality of politicians.
+
+Economics models of political selection investigate the effects of limitations on politicians on the quality of politicians from two different approaches. The first one is  the opportunity Costs of entering politics. Economic models suggest that free-riding
+incentives and lower opportunity costs give the less competent a
+comparative advantage at entering political life. On the other hand, form the human capital perspective, if elites have more human capital, selecting on
+competence may lead to uneven representation.
+
+According to the results of this paper, the Dual-employment Law has a statistically significant effects on the quality of politicians. My results show that this law prevents people with Ph.D degrees from entering politics since most of them are public employees and they face a high level of opportunity cost to enter politics. On the other hand, this law increases chance of winning for people with Law-related degrees as most of them are not publicly employed. Finally, people from the Democratic party are more willing to enter the race in states in which the Dual-employment Law is in effect. 
+
+\newpage
+\bibliographystyle{jpe}
+\nocite{*}
+\bibliography{amir.bib}
+
+\vfill
+\pagebreak{}
+\begin{spacing}{1.0}
+\addcontentsline{toc}{section}{References}
+\end{spacing}
+
+\vfill
+\pagebreak{}
+\clearpage
+
+
+%========================================
+% FIGURES AND TABLES 
+%========================================
+\section*{Figures and Tables}\label{sec:figTables}
+\addcontentsline{toc}{section}{Figures and Tables}
+
+%----------------------------------------
+% Table 1
+%----------------------------------------
+\begin{table}[ht]
+\caption{Summary Statistics of Variables of Interest}
+\label{tab:descriptives} 
+\centering
+\begin{threeparttable}
+\begin{tabular}{@{\extracolsep{5pt}}lcccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Median} \\ 
+\hline \\[-1.8ex] 
+
+Gender & 122,433 & 0.774 & 0.418 & 0.000 & 1.000 & 1.000 \\ 
+Jewish & 64,114 & 0.033 & 0.177 & 0.000 & 1.000 & 0.000 \\ 
+Agnostic & 64,114 & 0.004 & 0.064 & 0.000 & 1.000 & 0.000 \\ 
+Atheist & 64,114 & 0.012 & 0.110 & 0.000 & 1.000 & 0.000 \\ 
+Muslim & 64,114 & 0.002 & 0.041 & 0.000 & 1.000 & 0.000 \\ 
+Buddhist & 64,114 & 0.002 & 0.041 & 0.000 & 1.000 & 0.000 \\ 
+Christian & 64,114 & 0.790 & 0.407 & 0.000 & 1.000 & 1.000 \\ 
+BA & 94,180 & 0.420 & 0.494 & 0.000 & 1.000 & 0.000 \\ 
+MS & 94,180 & 0.162 & 0.369 & 0.000 & 1.000 & 0.000 \\ 
+PHD & 94,180 & 0.026 & 0.160 & 0.000 & 1.000 & 0.000 \\ 
+MD & 94,180 & 0.016 & 0.126 & 0.000 & 1.000 & 0.000 \\ 
+JD & 92,656 & 0.137 & 0.344 & 0.000 & 1.000 & 0.000 \\ 
+ASSOCIATE & 92,656 & 0.214 & 0.410 & 0.000 & 1.000 & 0.000 \\ 
+Diploma & 92,656 & 0.030 & 0.171 & 0.000 & 1.000 & 0.000 \\ 
+Years of Education & 94,180 & 16.434 & 2.107 & 12.000 & 23.000 & 16.000 \\ 
+Age & 80,531 & 65.038 & 14.126 & 1.000 & 116.000 & 66.000 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{threeparttable}
+\end{table}
+
+
+%----------------------------------------
+% Table 2
+%----------------------------------------
+
+
+
+
+\begin{table}[!htbp] \centering 
+  \caption{Preliminary Results} 
+  \label{tab:estimates} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & PHD & Age & Education & JD\\ 
+\\[-1.8ex] & \textit{Logistic} & \textit{OLS} & \textit{OLS} & \textit{Logistic} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Dual Employment & $-$0.071 & 0.265$^{**}$ & $-$2.741$^{***}$ & 0.308$^{***}$ \\ 
+  & (0.299) & (0.108) & (0.518) & (0.064) \\ 
+  & & & & \\ 
+ Gender & $-$0.675$^{***}$ & 0.857$^{***}$ & $-$3.168$^{***}$ & 0.056 \\ 
+  & (0.223) & (0.140) & (0.552) & (0.064) \\ 
+  & & & & \\ 
+ Male Population & $-$0.00003 & $-$0.00003 & 0.00003 & $-$0.00002 \\ 
+  & (0.00005) & (0.00002) & (0.0001) & (0.00001) \\ 
+  & & & & \\ 
+ Female Population & 0.00002 & 0.00001 & $-$0.00001 & 0.00001 \\ 
+  & (0.00004) & (0.00001) & (0.0001) & (0.00001) \\ 
+  & & & & \\ 
+ White & 0.00002$^{*}$ & 0.00001$^{*}$ & $-$0.00002 & 0.00001$^{**}$ \\ 
+  & (0.00001) & (0.00000) & (0.00002) & (0.00000) \\ 
+  & & & & \\ 
+ Black & 0.00001 & 0.00000 & $-$0.00002 & 0.00000 \\ 
+  & (0.00001) & (0.00000) & (0.00002) & (0.00000) \\ 
+  & & & & \\ 
+
+ Party & 1.541$^{***}$ & 0.655$^{***}$ & 1.367$^{***}$ & 0.459$^{***}$ \\ 
+  & (0.239) & (0.072) & (0.328) & (0.041) \\ 
+  & & & & \\ 
+ Material Status & $-$0.630$^{**}$ & 0.370$^{**}$ & $-$1.124$^{*}$ & $-$0.115 \\ 
+  & (0.294) & (0.163) & (0.655) & (0.076) \\ 
+  & & & & \\ 
+
+ MeanInc & $-$0.00002 & 0.00001$^{*}$ & 0.00003 & 0.00000 \\ 
+  & (0.00001) & (0.00000) & (0.00002) & (0.00000) \\ 
+  & & & & \\ 
+ MedianInc & 0.00002 & $-$0.00001$^{**}$ & $-$0.00004 & $-$0.00000 \\ 
+  & (0.00002) & (0.00001) & (0.00003) & (0.00000) \\ 
+  & & & & \\ 
+
+
+ Constant & $-$5.554$^{***}$ & $-$0.844$^{**}$ & 61.790$^{***}$ & 16.481$^{***}$ \\ 
+  & (1.004) & (0.409) & (1.665) & (0.206) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 5,522 & 5,402 & 5,959 & 10,268 \\ 
+R$^{2}$ &  &  & 0.022 & 0.019 \\ 
+Adjusted R$^{2}$ &  &  & 0.018 & 0.017 \\ 
+Log Likelihood & $-$585.320 & $-$2,653.821 &  &  \\ 
+Akaike Inf. Crit. & 1,224.639 & 5,361.642 &  &  \\ 
+Residual Std. Error &  &  & 12.226 (df = 5933) & 1.987 (df = 10242) \\ 
+F Statistic &  &  & 5.440$^{***}$ (df = 25; 5933) & 7.982$^{***}$ (df = 25; 10242) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+ 
+%----------------------------------------
+% Figure 1
+%----------------------------------------
+
+\begin{figure}[H]
+\centering
+\label{tab:Law} 
+
+\graphicspath{ {Rplot} }
+
+\includegraphics[width=200mm]{Rplot}
+\caption{States in which the Dual-employment Law is in effect}
+\end{figure}
+
+
+\end{document}
