@@ -6,7 +6,7 @@ In order to the replicate this project, please run the final.R file which is loc
 
 # Data
 
-The data needed to replicate this project come from two different sources. The first piece comes the VoteSmart Project's website, and the second piece comes from the census date. To scrape the data from the VoteSmart Project's website, you need to have your own API code([here](https://votesmart.org/share/api#.XNNvSI5Kg2w)) since I am not allowed to share mine. The data scrapping process might take up to one week.
+The data needed to replicate this project come from two different sources. The first piece comes from the VoteSmart Project's website, and the second piece comes from the census date. To scrape the data from the VoteSmart Project's website, you need to have your own API code([here](https://votesmart.org/share/api#.XNNvSI5Kg2w)) since I am not allowed to share mine. The data scrapping process might take up to one week.
 
 I have uploaded the census data that I made use of for this paper in the main directory. It is labled as cities.csv.
 
@@ -20,7 +20,7 @@ In the main directory, you will find the following files:
 
 * final.tex: text file of the final draft of the projct
 
-* final.PDF: PLD file of the final draft of the project
+* final.PDF: PDF file of the final draft of the project
 
 * amir.bib: List of references
 
